@@ -6,14 +6,17 @@ from psycopg2 import sql
 
 # Подключение к базе данных PostgreSQL
 def connect_db():
-    conn = psycopg2.connect(
-        dbname="postgres",
-        user="postgres",
-        password="Den22113s!",
-        host="localhost",
-        port="5433"
-    )
-    return conn
+    try:
+        conn = psycopg2.connect(
+            dbname="postgres",
+            user="postgres",
+            password="Den22113s!",
+            host="localhost",
+            port="5433"
+        )
+        return conn
+    except Exception as e:
+        print('ошибка в подключении к бд')
 
 # Функция для создания таблиц, если они не существуют
 def create_tables():
