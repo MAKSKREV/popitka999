@@ -1,2 +1,1 @@
-firebase_admin==6.5.0
 psycopg2==2.9.9
